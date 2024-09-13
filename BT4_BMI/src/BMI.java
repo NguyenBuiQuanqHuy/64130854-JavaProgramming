@@ -1,4 +1,26 @@
+import java.util.Scanner;
 
 public class BMI {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		float w,h,bmi;
+		Scanner testScanner= new Scanner(System.in);
+		System.out.print("Nhập cân nặng: ");
+		w=testScanner.nextFloat();
+		System.out.print("Nhập chiều cao: ");
+		h=testScanner.nextFloat();
+		bmi=w/(h*h);
+		if(bmi<18.5) {
+			System.out.print(bmi + ": Thiếu cân");
+		}
+		else if (bmi>18.5 && bmi <24.9) {
+			System.out.print(bmi + ":  Bình thường");
+		}
+		else if (bmi>25 && bmi <29.9) {
+			System.out.print(bmi + ":  Thừa cân");
+		}
+		else System.out.print(bmi + ":  Béo phì");
+	}
 
 }
