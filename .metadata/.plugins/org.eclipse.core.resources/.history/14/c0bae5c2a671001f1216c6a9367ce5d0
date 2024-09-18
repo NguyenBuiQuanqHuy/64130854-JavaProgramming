@@ -1,0 +1,8 @@
+import java.util.Scanner;
+
+public class BMI {
+	float height,weight,bmi;
+	Scanner textScanner= new Scanner(System.in);
+	System.
+	
+}

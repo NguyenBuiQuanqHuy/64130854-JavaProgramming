@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class KTchanle {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 int a;
+			Scanner banphim = new Scanner(System.in);
+			System.out.print("Nhập số nguyên a: ");
+			a=banphim.nextInt();
+			if(a%2==0) {
+				System.out.print("a là số chan");
+			}
+			else System.out.print("a là số lẻ");
+	}
+
+}

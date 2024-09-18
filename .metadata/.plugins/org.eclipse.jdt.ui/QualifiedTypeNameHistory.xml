@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="javax.security.auth.x500.X500Principal"/>
+    <fullyQualifiedTypeName name="java.lang.Short"/>
+    <fullyQualifiedTypeName name="Citizen"/>
+    <fullyQualifiedTypeName name="java.lang.Boolean"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="Cat"/>
+    <fullyQualifiedTypeName name="IAnimal"/>
+    <fullyQualifiedTypeName name="javax.swing.text.GapContent"/>
+    <fullyQualifiedTypeName name="Dog"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+</qualifiedTypeNameHistroy>
