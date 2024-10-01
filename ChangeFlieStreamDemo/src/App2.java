@@ -11,5 +11,4 @@ public class App2 {
 		String dong1= bufferedReader.readLine();
 		System.out.print(dong1);
 	}
-
 }
