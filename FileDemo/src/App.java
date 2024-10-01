@@ -15,9 +15,10 @@ public class App {
 		}
 		//Ghi dữ liệu vào file
 		try {
-			for(int i=1;i<=127;i++) 
-				fout.write(i);
+			for(int i=1;i<=127;i++) {
+				fout.write(1);
 				fout.close();
+			}
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
