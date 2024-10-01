@@ -15,7 +15,7 @@ public class Translation {
 		dictionary.put("Computer", "Máy tính");
 		dictionary.put("Keyboard", "Bàn phím");
 		dictionary.put("Mouse", "Chuột");
-		System.out.print(dictionary);
+		System.out.println(dictionary);
 	}
 
 }
