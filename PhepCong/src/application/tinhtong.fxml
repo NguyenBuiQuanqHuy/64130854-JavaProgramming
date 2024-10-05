@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <Label layoutX="201.0" layoutY="44.0" text="Phép Tính" textFill="#ff1a1a">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+      <Label layoutX="134.0" layoutY="125.0" text="A">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtA" layoutX="198.0" layoutY="125.0" />
+      <Label layoutX="134.0" layoutY="185.0" text="B">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtB" layoutX="198.0" layoutY="185.0" />
+      <Label layoutX="107.0" layoutY="248.0" text="Kết quả">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtKQ" layoutX="198.0" layoutY="247.0" />
+      <Button fx:id="btnTong" layoutX="224.0" layoutY="307.0" mnemonicParsing="false" onAction="#TinhTong" text="Tính Tổng">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
