@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class Controller {
@@ -20,7 +21,10 @@ public class Controller {
         jsonStudent.put("Mã SV",MaSV);
         jsonStudent.put("Họ tên SV",hoten);
         jsonStudent.put("Năm sinh",DoB);
-        textAreaThongtin.setText(jsonStudent.toJSONString());
+
+        JSONArray jsonArrayStudent=new JSONArray();
+        jsonArrayStudent.add(jsonStudent);
+        textAreaThongtin.setText(jsonArrayStudent.toJSONString()+"\n");
     }
 
     public void Reload(ActionEvent event){
