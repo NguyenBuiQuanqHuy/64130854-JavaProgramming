@@ -29,21 +29,21 @@ public class Controller {
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("GET");
 
-                BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+
+                BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 String inputLine;
                 StringBuilder content = new StringBuilder();
 
-                while ((inputLine = in.readLine()) != null) {
-                    content.append(inputLine).append("\n");
+                while ((inputLine = br.readLine()) != null) {
+                    txtAreaThongTin.setText(inputLine);
                 }
-                in.close();
                 connection.disconnect();
 
                 // Hiển thị kết quả trên giao diện JavaFX
-                updateResultTextArea(content.toString());
+
 
             }catch (Exception e){
-               
+                txtAreaThongTin.setText("Exception in NetClientGet:- " + e);
             }
 
 
