@@ -60,8 +60,35 @@ public class Controller {
                     JSONObject type =(JSONObject) ((JSONObject) typeObject).get("type");
                     types.append(type.get("name")).append(" ");
                 }
+                // Lấy khả năng (abilities)
+                StringBuilder abilities = new StringBuilder("Abilities: ");
+                JSONArray abilitiesArray = (JSONArray) jsonObject.get("abilities");
+                for (Object abilityObject : abilitiesArray) {
+                    JSONObject ability = (JSONObject) ((JSONObject) abilityObject).get("ability");
+                    abilities.append(ability.get("name")).append(" ");
+                }
 
-                txtAreaThongTin.setText("Name: " + pokemonName + "\nWeight: " + weight + "\nHeight: " + height + "\n" + types);
+                // Lấy chỉ số (stats)
+                StringBuilder stats = new StringBuilder("Stats:\n");
+                JSONArray statsArray = (JSONArray) jsonObject.get("stats");
+                for (Object statObject : statsArray) {
+                    JSONObject stat = (JSONObject) statObject;
+                    JSONObject statInfo = (JSONObject) stat.get("stat");
+                    stats.append(statInfo.get("name")).append(": ").append(stat.get("base_stat")).append("\n");
+                }
+
+                // Lấy hình ảnh (sprites)
+                JSONObject sprites = (JSONObject) jsonObject.get("sprites");
+                String frontSprite = (String) sprites.get("front_default");
+
+                // Hiển thị thông tin trong TextArea
+                txtAreaThongTin.setText("Name: " + pokemonName +
+                        "\nWeight: " + weight +
+                        "\nHeight: " + height +
+                        "\n" + types +
+                        "\n" + abilities +
+                        "\n" + stats +
+                        "\nSprite: " + frontSprite);
             }catch (Exception e){
                 txtAreaThongTin.setText("Exception in NetClientGet:- " + e);
             }
