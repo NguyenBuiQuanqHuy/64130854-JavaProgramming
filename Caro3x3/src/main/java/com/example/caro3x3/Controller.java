@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 
 public class Controller {
     Boolean turn=true;
+    Button[][] buttons;
     @FXML Button btn1;
     @FXML Button btn2;
     @FXML Button btn3;
