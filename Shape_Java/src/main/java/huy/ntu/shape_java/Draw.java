@@ -116,7 +116,7 @@ public class Draw extends Application {
 
         // Tạo Scene và hiển thị cửa sổ
         Scene scene = new Scene(pane, 310, 350);
-        stage.setTitle("Simple Drawing in JavaFX"); // Thay primaryStage bằng stage
+        stage.setTitle("Shape"); // Thay primaryStage bằng stage
         stage.setScene(scene);
         stage.show();
     }
