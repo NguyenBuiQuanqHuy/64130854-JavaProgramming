@@ -17,106 +17,110 @@ public class Draw extends Application {
     }
 
     @Override
-    public void start(Stage stage) { 
+    public void start(Stage stage) {
         // Tạo một Pane để chứa các hình vẽ
         Pane pane = new Pane();
 
-        // Vẽ hình tròn lớn (viền thân)
-        Circle body = new Circle(155, 235, 65); // (x, y, bán kính)
-        body.setStroke(Color.BLACK);
-        body.setStrokeWidth(5);
-        body.setFill(null);
 
-        // Vẽ hình tròn nhỏ (chân nhân vật)
-        Circle leftLeg = new Circle(110, 290, 20);
-        leftLeg.setStroke(Color.BLACK);
-        leftLeg.setStrokeWidth(5);
-        leftLeg.setFill(Color.WHITE);
-
-        Circle rightLeg = new Circle(200, 290, 20);
-        rightLeg.setStroke(Color.BLACK);
-        rightLeg.setStrokeWidth(5);
-        rightLeg.setFill(Color.WHITE);
-
-        // Vẽ tam giác lớn (phần đầu nhân vật)
-        Polygon head = new Polygon();
-        head.getPoints().addAll(
-                155.0, 50.0,  // Đỉnh tam giác
-                305.0, 200.0, // Góc phải
-                5.0, 200.0    // Góc trái
+        // Đầu
+        Polygon face = new Polygon();
+        face.getPoints().addAll(
+                155.0, 50.0,
+                305.0, 200.0,
+                5.0, 200.0
         );
-        head.setFill(Color.WHITE);
-        head.setStroke(Color.BLACK);
-        head.setStrokeWidth(5);
+        face.setFill(Color.WHITE);
+        face.setStroke(Color.BLACK);
+        face.setStrokeWidth(5);
 
-        // Vẽ tai trái
+        // Tai trái
         Polygon leftEar = new Polygon();
         leftEar.getPoints().addAll(
-                115.0, 90.0, // Đáy trái
-                115.0, 40.0, // Đỉnh tai
-                145.0, 60.0  // Đáy phải
+                115.0, 90.0,
+                115.0, 40.0,
+                145.0, 60.0
         );
         leftEar.setFill(null);
         leftEar.setStroke(Color.BLACK);
         leftEar.setStrokeWidth(5);
 
-        // Vẽ tai phải
+        // Tai phải
         Polygon rightEar = new Polygon();
         rightEar.getPoints().addAll(
-                165.0, 60.0,  // Đáy trái
-                195.0, 40.0,  // Đỉnh tai
-                195.0, 90.0   // Đáy phải
+                165.0, 60.0,
+                195.0, 40.0,
+                195.0, 90.0
         );
         rightEar.setFill(null);
         rightEar.setStroke(Color.BLACK);
         rightEar.setStrokeWidth(5);
 
-        // Vẽ mũi (tam giác nhỏ bên trong đầu)
+        // Mũi
         Polygon nose = new Polygon();
         nose.getPoints().addAll(
-                160.0, 170.0, // Đỉnh mũi
-                185.0, 140.0, // Góc phải
-                135.0, 140.0  // Góc trái
+                160.0, 170.0,
+                185.0, 140.0,
+                135.0, 140.0
         );
         nose.setFill(null);
         nose.setStroke(Color.RED);
         nose.setStrokeWidth(3);
 
-        // Vẽ các đường cong trong chân
-        Arc leftLegArc1 = new Arc(105, 297, 10, 10, 90, 120);
-        leftLegArc1.setFill(null);
-        leftLegArc1.setStroke(Color.RED);
-        leftLegArc1.setStrokeWidth(3);
-        leftLegArc1.setType(ArcType.OPEN);
+        // Thân
+        Circle mainBody = new Circle(155, 235, 65); // (x, y, bán kính)
+        mainBody.setStroke(Color.BLACK);
+        mainBody.setStrokeWidth(5);
+        mainBody.setFill(null);
 
-        Arc leftLegArc2 = new Arc(107, 297, 10, 10, -80, 120);
-        leftLegArc2.setFill(null);
-        leftLegArc2.setStroke(Color.RED);
-        leftLegArc2.setStrokeWidth(3);
-        leftLegArc2.setType(ArcType.OPEN);
+        // Chân trái
+        Circle leftFoot = new Circle(110, 290, 20);
+        leftFoot.setStroke(Color.BLACK);
+        leftFoot.setStrokeWidth(5);
+        leftFoot.setFill(Color.WHITE);
 
-        Arc rightLegArc1 = new Arc(197, 297, 10, 10, 120, 120);
-        rightLegArc1.setFill(null);
-        rightLegArc1.setStroke(Color.RED);
-        rightLegArc1.setStrokeWidth(3);
-        rightLegArc1.setType(ArcType.OPEN);
+        // Chân phải
+        Circle rightFoot = new Circle(200, 290, 20);
+        rightFoot.setStroke(Color.BLACK);
+        rightFoot.setStrokeWidth(5);
+        rightFoot.setFill(Color.WHITE);
 
-        Arc rightLegArc2 = new Arc(199, 297, 10, 10, -45, 120);
-        rightLegArc2.setFill(null);
-        rightLegArc2.setStroke(Color.RED);
-        rightLegArc2.setStrokeWidth(3);
-        rightLegArc2.setType(ArcType.OPEN);
+
+        // Đường cong chân trái
+        Arc leftFootCurve1 = new Arc(105, 297, 10, 10, 90, 120);
+        leftFootCurve1.setFill(null);
+        leftFootCurve1.setStroke(Color.RED);
+        leftFootCurve1.setStrokeWidth(3);
+        leftFootCurve1.setType(ArcType.OPEN);
+
+        Arc leftFootCurve2 = new Arc(107, 297, 10, 10, -80, 120);
+        leftFootCurve2.setFill(null);
+        leftFootCurve2.setStroke(Color.RED);
+        leftFootCurve2.setStrokeWidth(3);
+        leftFootCurve2.setType(ArcType.OPEN);
+
+        // Đường cong chân phải
+        Arc rightFootCurve1 = new Arc(197, 297, 10, 10, 120, 120);
+        rightFootCurve1.setFill(null);
+        rightFootCurve1.setStroke(Color.RED);
+        rightFootCurve1.setStrokeWidth(3);
+        rightFootCurve1.setType(ArcType.OPEN);
+
+        Arc rightFootCurve2 = new Arc(199, 297, 10, 10, -45, 120);
+        rightFootCurve2.setFill(null);
+        rightFootCurve2.setStroke(Color.RED);
+        rightFootCurve2.setStrokeWidth(3);
+        rightFootCurve2.setType(ArcType.OPEN);
 
         // Thêm tất cả các hình vào Pane
         pane.getChildren().addAll(
-                body, leftLeg, rightLeg, head,
+                mainBody, leftFoot, rightFoot, face,
                 leftEar, rightEar, nose,
-                leftLegArc1, leftLegArc2, rightLegArc1, rightLegArc2
+                leftFootCurve1, leftFootCurve2, rightFootCurve1, rightFootCurve2
         );
 
         // Tạo Scene và hiển thị cửa sổ
         Scene scene = new Scene(pane, 310, 350);
-        stage.setTitle("Shape"); // Thay primaryStage bằng stage
+        stage.setTitle("Character Drawing");
         stage.setScene(scene);
         stage.show();
     }
