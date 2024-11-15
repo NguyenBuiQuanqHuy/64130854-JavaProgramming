@@ -58,9 +58,9 @@ public class Draw extends Application {
         // Mũi
         Polygon nose = new Polygon();
         nose.getPoints().addAll(
-                160.0, 170.0,
-                185.0, 140.0,
-                135.0, 140.0
+                155.0, 175.0,
+                180.0, 140.0,
+                130.0, 140.0
         );
         nose.setFill(null);
         nose.setStroke(Color.RED);
@@ -119,7 +119,7 @@ public class Draw extends Application {
         );
 
         // Tạo Scene và hiển thị cửa sổ
-        Scene scene = new Scene(pane, 310, 350);
+        Scene scene = new Scene(pane, 500, 500);
         stage.setTitle("Character Drawing");
         stage.setScene(scene);
         stage.show();
