@@ -8,8 +8,8 @@ public class Draw extends JPanel{
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D g2d = (Graphics2D) g;
-
-        // Vẽ tam giác lớn (đầu)
+		
+		// Vẽ tam giác lớn (đầu)
         int[] xPoints = {100, 200, 0};
         int[] yPoints = {0, 200, 200};
         g2d.drawPolygon(xPoints, yPoints, 3);
@@ -43,4 +43,5 @@ public class Draw extends JPanel{
         g2d.drawArc(130, 310, 30, 20, 0, -180);
 	}
 }
+
 
