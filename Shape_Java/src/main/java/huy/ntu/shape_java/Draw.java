@@ -17,7 +17,7 @@ public class Draw extends Application {
     }
 
     @Override
-    public void start(Stage stage) { // Thay primaryStage bằng stage ở đây
+    public void start(Stage stage) { 
         // Tạo một Pane để chứa các hình vẽ
         Pane pane = new Pane();
 
