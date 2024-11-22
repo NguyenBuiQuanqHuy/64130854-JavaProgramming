@@ -1,9 +1,8 @@
-module com.example.demobanhang {
+module huy.ntu.demobanhang {
     requires javafx.controls;
     requires javafx.fxml;
-    requires java.sql;
 
 
-    opens com.example.demobanhang to javafx.fxml;
-    exports com.example.demobanhang;
+    opens huy.ntu.demobanhang to javafx.fxml;
+    exports huy.ntu.demobanhang;
 }
