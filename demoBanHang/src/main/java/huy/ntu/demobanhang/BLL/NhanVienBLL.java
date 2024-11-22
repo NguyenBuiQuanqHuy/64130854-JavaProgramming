@@ -5,6 +5,11 @@ import huy.ntu.demobanhang.ModelDTO.NhanVien;
 
 public class NhanVienBLL {
     NhanVienDAL nvDAL;
+
+    public NhanVienBLL(NhanVienDAL nvDAL) {
+        this.nvDAL = nvDAL;
+    }
+
     public boolean ThemMoi(NhanVien nv){
         boolean kq=nvDAL.AddNew(nv);
         return kq;
