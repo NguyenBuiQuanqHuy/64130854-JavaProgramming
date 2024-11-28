@@ -1,26 +1,31 @@
 package huy.ntu.demobanhang.Untils;
 
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.PBEKeySpec;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
-import java.security.spec.InvalidKeySpecException;
-import java.security.spec.KeySpec;
-import java.util.Base64;
 
-public class CommonUtils {
-    static String encodePass(String passPlainText) throws InvalidKeySpecException, NoSuchAlgorithmException {
-        String hashPass;
-        hashPass=passPlainText;
-//        SecureRandom random = new SecureRandom();
-//        byte[] salt = new byte[16];
-//        random.nextBytes(salt);
-//        KeySpec spec = new PBEKeySpec("password".toCharArray(), salt, 65536, 128);
-//        SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
-//        byte[] hash = f.generateSecret(spec).getEncoded();
-//        Base64.Encoder enc = Base64.getEncoder();
-//        System.out.printf("salt: %s%n", enc.encodeToString(salt));
-//        System.out.printf("hash: %s%n", enc.encodeToString(hash));
-        return hashPass;
+import static huy.ntu.demobanhang.Untils.DBUtils.DBConnect;
+public class CommonUtils{
+    public static String hashPassword(String password) {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] encodedHash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
+            return bytesToHex(encodedHash);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("Error: SHA-256 algorithm not found.", e);
+        }
+    }
+
+    // Chuyển byte array sang chuỗi hex
+    private static String bytesToHex(byte[] bytes) {
+        StringBuilder hexString = new StringBuilder();
+        for (byte b : bytes) {
+            String hex = Integer.toHexString(0xff & b);
+            if (hex.length() == 1) {
+                hexString.append('0');
+            }
+            hexString.append(hex);
+        }
+        return hexString.toString();
     }
 }
