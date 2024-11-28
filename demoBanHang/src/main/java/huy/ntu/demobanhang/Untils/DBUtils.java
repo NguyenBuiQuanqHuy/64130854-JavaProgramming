@@ -16,10 +16,7 @@ import java.sql.SQLException;
 import java.util.Base64;
 
 public class DBUtils {
-    @FXML
-    TextField txtTenDN,txtMK;
-    @FXML
-    Button btnDN;
+
     static public Connection DBConnect() throws ClassNotFoundException, SQLException, NoSuchAlgorithmException, InvalidKeySpecException {
         Class.forName("com.mysql.jdbc.Driver");
         String strConn="jdbc:mysql://localhost:3306/demobanhang";
