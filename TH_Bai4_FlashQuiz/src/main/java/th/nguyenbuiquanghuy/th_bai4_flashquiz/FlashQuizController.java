@@ -35,11 +35,6 @@ public class FlashQuizController {
         questionsList.add(new Questions("Ai là họa sĩ nổi tiếng với tranh 'Mona Lisa'?", "Vincent van Gogh", "Claude Monet", "Leonardo da Vinci", "Pablo Picasso", "Leonardo da Vinci", ""));
         questionsList.add(new Questions("Hệ điều hành nào được phát triển bởi Microsoft?", "Linux", "Windows", "MacOS", "Android", "Windows", ""));
         questionsList.add(new Questions("Tác phẩm nào của Nguyễn Trãi được coi là kiệt tác của văn học cổ điển Việt Nam?", "Bình Ngô đại cáo", "Cảm hứng mùa thu", "Tỏ lòng", "Lý Thường Kiệt", "Bình Ngô đại cáo", ""));
-
-//        for (int i = 0; i < questionsList.size(); i++) {
-//            answeredQuestions.add(false);
-//        }
-
         loadQuestions();
     }
 
