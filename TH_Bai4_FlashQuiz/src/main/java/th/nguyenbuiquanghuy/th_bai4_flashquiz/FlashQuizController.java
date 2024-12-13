@@ -18,10 +18,8 @@ public class FlashQuizController {
     ImageView imgQues;
     @FXML
     Button btnA, btnB, btnC, btnD;
-
     String imgPath = "/th/nguyenbuiquanghuy/th_bai4_flashquiz/images/";
     private ArrayList<Questions> questionsList = new ArrayList<>();
-    private ArrayList<Boolean> answeredQuestions = new ArrayList<>();
     private float score = 0;
 
     public void initialize() {
