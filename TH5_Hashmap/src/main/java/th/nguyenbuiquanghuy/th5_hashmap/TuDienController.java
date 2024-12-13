@@ -53,13 +53,25 @@ public class TuDienController {
     }
 
     public void ThemTu() throws IOException {
-            Stage currentStage = (Stage) textFieldSearch.getScene().getWindow();
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("themtu-view.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = new Stage();
-            stage.initStyle(StageStyle.UNDECORATED);
-            stage.setScene(scene);
-            stage.show();
-            currentStage.close();
+        Stage currentStage = (Stage) textFieldSearch.getScene().getWindow();
+
+        // Truyền tuDien vào màn hình "Thêm Từ"
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("themtu-view.fxml"));
+        Parent root = fxmlLoader.load();  // Tải view
+
+        // Lấy controller từ fxmlLoader sau khi đã load view
+        ThemTuController themTuController = fxmlLoader.getController();
+        themTuController.setTuDien(tuDien);  // Truyền tuDien vào controller
+
+        // Khởi tạo và hiển thị stage mới
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.setScene(scene);
+        stage.show();
+
+        // Đóng màn hình hiện tại
+        currentStage.close();
     }
+
 }

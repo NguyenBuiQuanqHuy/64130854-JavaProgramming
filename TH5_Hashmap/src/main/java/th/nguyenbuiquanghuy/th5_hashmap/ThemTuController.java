@@ -23,7 +23,6 @@ public class ThemTuController {
 
     @FXML
     public void ThemTu() {
-        tuDien = new HashMap<>();
         String tiengAnh = textFieldAnh.getText().trim();
         String phienAm = textFieldPhienAm.getText().trim();
         String nghiaViet = textFieldViet.getText().trim();
@@ -49,7 +48,6 @@ public class ThemTuController {
 
     @FXML
     public void TraCuu() throws IOException {
-        tuDien = new HashMap<>();
         Stage currentStage = (Stage) textFieldAnh.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("tudien-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
